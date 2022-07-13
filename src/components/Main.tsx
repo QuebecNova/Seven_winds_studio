@@ -24,8 +24,7 @@ export default function Main({ data }: Props) {
   const [stretched, setStretched] = useState('none')
 
   const renderData = useCallback(() => {
-    console.log('a')
-
+    
     /* open button
     //////////////////
        singleData

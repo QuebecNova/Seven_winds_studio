@@ -25,7 +25,7 @@ export default function Item({ item, activeItem, openedItem }: Props) {
           {dateStart} - {dateEnd}
         </p>
       </div>
-      <ItemContent item={item} openedItem={openedItem} />
+      <ItemContent item={item} openedItem={openedItem}/>
     </div>
   );
 }

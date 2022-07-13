@@ -31,7 +31,7 @@ export default function SubData({ subData, activeSubData }: Props) {
     
     return subData.items.map((item) => {
       return (
-        <div onClick={() => openItemContent(item)}>
+        <div onClick={() => openItemContent(item)} key={uuid()}>
           <Item
             item={item}
             activeItem={activeItem}

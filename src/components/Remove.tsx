@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import x from "../assets/x.svg";
 import { IData } from "../types/IData";
 import Option from "./Option";
+import { v4 as uuid } from 'uuid';
 
 type Props = {
   data: IData[];
@@ -26,7 +27,7 @@ export default function Search({ data, setRemovedItems, stretched, setStretched 
 
   function renderOptions() {
     return data.map((item) => {
-      return <Option item={item.title} />;
+      return <Option item={item.title} key={uuid()}/>;
     });
   }
 
