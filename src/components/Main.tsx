@@ -3,8 +3,7 @@ import { v4 as uuid } from "uuid";
 import SingleData from "./SingleData";
 import { useState } from "react";
 import { IData } from "../types/IData";
-import Remove from "./Remove";
-import Search from "./Search";
+import SideBars from "./SideBars";
 
 export const MainContext: any = createContext(null);
 
@@ -20,8 +19,7 @@ export default function Main({ data }: Props) {
 
   const [activeData, setActiveData] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const [removedItems, setRemovedItems] = useState("");
-  const [stretched, setStretched] = useState('none')
+  const [removedItem, setRemovedItem] = useState("");
 
   const renderData = useCallback(() => {
     
@@ -35,7 +33,7 @@ export default function Main({ data }: Props) {
 
     return data.map((singleData) => {
       const matchesSelected =
-        removedItems.includes(singleData.title) ||
+        removedItem.includes(singleData.title) ||
         !singleData.title.match(inputValue);
       if (matchesSelected) return [];
 
@@ -47,7 +45,7 @@ export default function Main({ data }: Props) {
         />
       );
     });
-  }, [activeData, data, inputValue, removedItems])
+  }, [activeData, data, inputValue, removedItem])
 
   return (
     <MainContext.Provider value={value}>
@@ -59,21 +57,13 @@ export default function Main({ data }: Props) {
           Open!
         </button>
         {renderData()}
-        <nav>
-          <Remove
-            data={data}
-            removedItems={removedItems}
-            setRemovedItems={setRemovedItems}
-            stretched={stretched === 'remove'}
-            setStretched={setStretched}
-          />
-          <Search 
-            inputValue={inputValue} 
-            setInputValue={setInputValue} 
-            stretched={stretched === 'search'}
-            setStretched={setStretched}
-          />
-        </nav>
+        <SideBars 
+          data={data}
+          removedItem={removedItem}
+          setRemovedItem={setRemovedItem}
+          inputValue={inputValue} 
+          setInputValue={setInputValue}
+        />
       </div>
     </MainContext.Provider>
   );

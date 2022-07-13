@@ -101,12 +101,14 @@ $bold: 600;
     visibility: visible;
     opacity: 1;
     height: 224px;
+    transition: 1s ease;
   }
 
   .inactive {
     visibility: hidden;
     opacity: 0;
     height: 0;
+    transition: 1s ease;
   }
 
   .content {

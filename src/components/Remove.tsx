@@ -6,19 +6,19 @@ import { v4 as uuid } from 'uuid';
 
 type Props = {
   data: IData[];
-  setRemovedItems: React.Dispatch<React.SetStateAction<string>>;
-  removedItems: string;
+  setRemovedItem: React.Dispatch<React.SetStateAction<string>>;
+  removedItem: string;
   stretched: boolean;
   setStretched: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export default function Search({ data, setRemovedItems, stretched, setStretched }: Props) {
+export default function Search({ data, setRemovedItem, stretched, setStretched }: Props) {
 
   const [value, setValue] = useState("Choose item");
 
   function removeItem(e: React.ChangeEvent<HTMLSelectElement>) {
     setValue(e.target.value);
-    setRemovedItems(e.target.value);
+    setRemovedItem(e.target.value);
   }
 
   function stretch() {
