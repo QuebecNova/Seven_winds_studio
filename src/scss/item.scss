@@ -1,0 +1,139 @@
+//colors
+$splashColor: #f5f5f8;
+
+$tabColor: #2e465c;
+$tabStrokeColor: #999999;
+
+$itemsListFontColor: #2b455c;
+$itemsListBorderColor: #2e465c;
+$itemsListContainerBordersColor: #9cd0ff;
+$itemsListContainerColor: #f1f9ff;
+
+$white: #ffffff;
+
+//font
+$light: 300;
+$regular: 400;
+$semi-bold: 500;
+$bold: 600;
+
+@mixin font($weight) {
+  font-weight: $weight;
+}
+
+.item {
+  margin-left: 38px;
+  margin-top: 16px;
+  width: 297px;
+  background-color: $itemsListContainerColor;
+  border: 1px solid $itemsListBorderColor;
+  border-radius: 2px;
+
+  .item__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    border-bottom: 1px solid $itemsListBorderColor;
+    background-color: $itemsListContainerColor;
+    height: 62px;
+    p {
+      font-size: 14px;
+      line-height: 16px;
+    }
+    .title {
+      padding-left: 12px;
+      padding-bottom: 4px;
+      font-size: 18px;
+      line-height: 21px;
+    }
+    .subtitle {
+      padding-left: 12px;
+      text-align: left;
+    }
+    .time {
+      padding-right: 12px;
+    }
+    .title,
+    .time {
+      @include font($semi-bold);
+    }
+  }
+
+  .item__values {
+    width: 100%;
+    .header {
+      height: 16px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid $itemsListBorderColor;
+    }
+    img {
+      padding-bottom: 5px;
+      padding-left: 2px;
+    }
+    p {
+      @include font($regular);
+      font-size: 12px;
+      line-height: 14px;
+      height: 16px;
+      display: flex;
+    }
+    .no {
+      width: 34px;
+      padding-left: 13px;
+      border-right: 1px solid $itemsListBorderColor;
+    }
+    .title {
+      padding-left: 3px;
+      width: 195px;
+    }
+    .number {
+      p {
+        margin-left: 9px;
+      }
+      width: 67px;
+      border-left: 1px solid $itemsListBorderColor;
+    }
+  }
+
+  .active {
+    visibility: visible;
+    opacity: 1;
+    height: 224px;
+  }
+
+  .inactive {
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+  }
+
+  .content {
+    li {
+      height: 16px;
+      display: flex;
+      justify-content: space-between;
+      height: 16px;
+      border-bottom: 1px solid $itemsListContainerBordersColor;
+      padding-top: 2px;
+      .value {
+        width: 30px;
+        padding-right: 190px;
+        @include font($light);
+      }
+      .time {
+        width: 67px;
+        border-left: 1px solid $itemsListContainerBordersColor;
+        justify-content: center;
+        @include font($regular);
+      }
+      .index {
+        width: 34px;
+        justify-content: center;
+        border-right: 1px solid $itemsListContainerBordersColor;
+        @include font($light);
+      }
+    }
+  }
+}

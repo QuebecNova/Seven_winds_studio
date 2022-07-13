@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,600&display=swap");
+@import url("./reset-style.scss");
+@import url("input.scss");
+@import url("item.scss");
+
+//font
+$light: 300;
+$regular: 400;
+$semi-bold: 500;
+$bold: 600;
+
+@mixin font($weight) {
+  font-weight: $weight;
+}
+
+//colors
+$splashColor: #f5f5f8;
+
+$tabColor: #2e465c;
+$tabStrokeColor: #999999;
+
+$itemsListFontColor: #2b455c;
+$itemsListBorderColor: #2e465c;
+$itemsListContainerBordersColor: #9cd0ff;
+$itemsListContainerColor: #f1f9ff;
+
+$white: #ffffff;
+
+//basic-style
+* {
+  @include font($light);
+}
+
+html,
+body {
+  width: 1920px;
+  background-color: $splashColor;
+}
+
+.main {
+  width: 1703px;
+  margin-top: 61px;
+  margin-bottom: 63px;
+  margin-right: 170px;
+  margin-left: 47px;
+}
+
+nav {
+  position: fixed;
+  right: 100px;
+  bottom: 50px;
+  display: flex;
+}
+
+p {
+  color: $itemsListFontColor;
+}
+
+.tab {
+  background-color: $tabColor;
+  color: $white;
+  width: 67px;
+  height: 37px;
+  border-radius: 2px;
+}
+
+.main__button {
+  margin-left: 0px;
+}
+
+.data {
+  margin-left: 38px;
+  margin-top: 16px;
+}
+
+.subData {
+  margin-left: 38px;
+  margin-top: 16px;
+}
+
+.list {
+  margin-left: 38px;
+  margin-top: 16px;
+}
+
+.items {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.active {
+  visibility: visible;
+  opacity: 1;
+  overflow: hidden;
+}
+
+.inactive {
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  margin: 0;
+}
