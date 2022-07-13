@@ -7,11 +7,12 @@ type Props = {
   data: IData[];
   setRemovedItems: React.Dispatch<React.SetStateAction<string>>;
   removedItems: string;
+  stretched: boolean;
+  setStretched: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export default function Search({ data, setRemovedItems }: Props) {
-    
-  const [stretched, setStretched] = useState(false);
+export default function Search({ data, setRemovedItems, stretched, setStretched }: Props) {
+
   const [value, setValue] = useState("Choose item");
 
   function removeItem(e: React.ChangeEvent<HTMLSelectElement>) {
@@ -20,7 +21,7 @@ export default function Search({ data, setRemovedItems }: Props) {
   }
 
   function stretch() {
-    setStretched(!stretched);
+    setStretched('remove');
   }
 
   function renderOptions() {

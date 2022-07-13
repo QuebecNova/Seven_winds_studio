@@ -4,18 +4,18 @@ import search from "../assets/search.svg";
 type Props = {
   setInputValue: React.Dispatch<React.SetStateAction<string>>;
   inputValue: string;
+  stretched: boolean;
+  setStretched: React.Dispatch<React.SetStateAction<string>>;
 };
 
-export default function Search({ setInputValue, inputValue }: Props) {
-    
-  const [stretched, setStretched] = useState(false);
+export default function Search({ setInputValue, inputValue, stretched, setStretched }: Props) {
 
   function changeInputValue(e: React.ChangeEvent<HTMLInputElement>) {
     setInputValue(e.target.value);
   }
 
   function stretch() {
-    setStretched(!stretched);
+    setStretched('search');
   }
 
   return (

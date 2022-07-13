@@ -21,6 +21,7 @@ export default function Main({ data }: Props) {
   const [activeData, setActiveData] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [removedItems, setRemovedItems] = useState("");
+  const [stretched, setStretched] = useState('none')
 
   const renderData = useCallback(() => {
     console.log('a')
@@ -64,8 +65,15 @@ export default function Main({ data }: Props) {
             data={data}
             removedItems={removedItems}
             setRemovedItems={setRemovedItems}
+            stretched={stretched === 'remove'}
+            setStretched={setStretched}
           />
-          <Search inputValue={inputValue} setInputValue={setInputValue} />
+          <Search 
+            inputValue={inputValue} 
+            setInputValue={setInputValue} 
+            stretched={stretched === 'search'}
+            setStretched={setStretched}
+          />
         </nav>
       </div>
     </MainContext.Provider>
