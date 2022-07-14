@@ -22,7 +22,7 @@ export default function Search({ data, setRemovedItem, stretched, setStretched }
   }
 
   function stretch() {
-    setStretched('remove');
+    stretched ? setStretched('none') : setStretched('remove')
   }
 
   function renderOptions() {

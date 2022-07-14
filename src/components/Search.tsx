@@ -15,7 +15,7 @@ export default function Search({ setInputValue, inputValue, stretched, setStretc
   }
 
   function stretch() {
-    setStretched('search');
+    stretched ? setStretched('none') :  setStretched('search');
   }
 
   return (
