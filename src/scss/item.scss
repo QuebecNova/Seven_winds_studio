@@ -29,6 +29,17 @@ $bold: 600;
   border: 1px solid $itemsListBorderColor;
   border-radius: 2px;
 
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 3.3em;
+    top: 3.31em;
+    height: calc(100% - 3.3em);
+    width: 2px;
+    background-color: $tabStrokeColor;
+  }
+
   .item__header {
     display: flex;
     justify-content: space-between;

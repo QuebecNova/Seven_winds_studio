@@ -56,7 +56,9 @@ export default function Main({ data }: Props) {
         >
           Open!
         </button>
-        {renderData()}
+        <div className="all-data">
+          {renderData()}
+        </div>
         <SideBars 
           data={data}
           removedItem={removedItem}

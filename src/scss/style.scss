@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,600&display=swap");
-@import url("./reset-style.scss");
+@import url("reset-style.scss");
 @import url("input.scss");
 @import url("item.scss");
 
@@ -69,13 +69,55 @@ p {
 }
 
 .data {
-  margin-left: 38px;
-  margin-top: 16px;
+  padding-left: 38px;
+  padding-top: 16px;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 1em;
+    top: 2.2em;
+    height: 2px;
+    width: 22px;
+    background-color: $tabStrokeColor;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 1em;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: $tabStrokeColor;
+  }
 }
 
 .subData {
-  margin-left: 38px;
-  margin-top: 16px;
+  padding-left: 38px;
+  padding-top: 16px;
+  position: relative;
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 1em;
+    top: 2.2em;
+    height: 2px;
+    width: 22px;
+    background-color: $tabStrokeColor;
+  }
+  &:before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 1em;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background-color: $tabStrokeColor;
+  }
 }
 
 .list {
@@ -101,6 +143,15 @@ p {
   visibility: hidden;
   opacity: 0;
   height: 0;
+  padding: 0;
   margin: 0;
   transition: 1s ease;
+}
+
+.all-data :last-child:before {
+  height: 37px;
+}
+
+.data :last-child:before {
+  height: 37px;
 }
